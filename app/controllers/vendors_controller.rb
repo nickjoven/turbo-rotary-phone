@@ -6,7 +6,7 @@ class VendorsController < ApplicationController
         render json: vendors
     end
 
-    def destroy
+    def show
         vendor = Vendor.find_by!(id: params[:id]) #exception fires render_404
         render json: vendor, serializer: VendorWithVendorSweetsSerializer
     end
